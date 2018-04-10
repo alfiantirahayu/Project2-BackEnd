@@ -1,0 +1,10 @@
+<form method="post" action="/setinsert3">
+            <select name="productid">
+            <option selected>PRODUCT</option>
+            <% product.forEach(product => { %>
+            <option value="<%= product.productid %>"><%= product.season %> || <%= product.productcategory %> || <%= product.product %> </option>
+            <% }) %>    
+            </select><br><br>
+                productcolor : <input type="text" name="productcolor"><br>
+                <input type="Submit" value="Submit">
+</form>

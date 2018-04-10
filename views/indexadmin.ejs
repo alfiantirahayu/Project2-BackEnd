@@ -1,0 +1,38 @@
+<html>
+    <head>
+    </head>
+    <body>
+<a href="/insertseason">insert season</a>|| <a href="/insertcategory">insert category</a> || <a href="/insertproduct">insert product</a> ||<a href="/insertcolor">insert product color</a> ||<a href="/insertsize">insert product size & stock</a> ||
+        <center>      
+            <table border="1" width="400" cellspacing="0" cellpadding="0" >
+                    <tr>
+                            <td style="font-weight:bold">Season</td>
+                            <td style="font-weight:bold">Category</td>
+                            <td style="font-weight:bold">Product</td>
+                            <td style="font-weight:bold">Price</td>
+                            <td style="font-weight:bold">Color</td>
+                            <td style="font-weight:bold">Size</td>
+                            <td style="font-weight:bold">Stock</td>
+                            <td style="font-weight:bold">Description</td>
+                        </tr>
+                        <% 
+                        for (var i=0; i<product.length; i++)
+                        {
+                        %>
+                        <tr>
+                            <td><%= product[i].season %></td>
+                            <td><%= product[i].productcategory %></td>
+                            <td><%= product[i].product %></td>
+                            <td><%= product[i].price %></td>
+                            <td><%= product[i].productcolor %></td>
+                            <td><%= product[i].productsize %></td>
+                            <td><%= product[i].productstock %></td>
+                            <td><%= product[i].description %></td>
+                        </tr>
+                        <% 
+                        }
+                         %>
+                    </table>
+    </center>
+    </body>
+</html>

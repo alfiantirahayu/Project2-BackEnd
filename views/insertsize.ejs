@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+<a href="/indexadmin">Home</a> || <a href="/insertseason">insert season</a>|| <a href="/insertcategory">insert category</a> || <a href="/insertproduct">insert product</a> || <a href="/insertcolor">insert product color</a> ||
+    <center> <h1> PRODUCT SIZE & STOCK </h1></center><br>
+            <table border="1" width="300" cellspacing="0" cellpadding="0" >
+                    <tr>
+                            <td style="font-weight:bold">Season</td>
+                            <td style="font-weight:bold">Category</td>
+                            <td style="font-weight:bold">Product</td>
+                            <td style="font-weight:bold">Price</td>
+                            <td style="font-weight:bold">Color</td>
+                            <td style="font-weight:bold">Size</td>
+                            <td style="font-weight:bold">Stock</td>
+                            <td style="font-weight:bold">Description</td>
+                        </tr>
+                        <% for (var i=0; i<product.length; i++) { %>
+                        <tr>
+                            <td><%= product[i].season %></td>
+                            <td><%= product[i].productcategory %></td>
+                            <td><%= product[i].product %></td>
+                            <td><%= product[i].price %></td>
+                            <td><%= product[i].productcolor %></td>
+                            <td><%= product[i].productsize %></td>
+                            <td><%= product[i].productstock %></td>
+                            <td><%= product[i].description %></td>
+                        </tr>
+                        <% 
+                        }
+                         %>
+            </table><br><br>
+
+        <form method="post" action="/setinsert4">
+            <select name="colorid">
+            <option selected>productcolor</option>
+            <% productcolor.forEach(productcolor => { %>
+            <option value="<%= productcolor.colorid %>"><%= productcolor.season %> || <%= productcolor.productcategory %> || <%= productcolor.product %> || <%= productcolor.productcolor %> </option>
+            <% }) %>    
+            </select><br><br>
+            productsize : <input type="text" name="productsize"><br>
+            productstock : <input type="text" name="productstock"><br>
+            <input type="Submit" value="Submit">
+        </form><br>
+
+        
+        
+    </body>
+</html>

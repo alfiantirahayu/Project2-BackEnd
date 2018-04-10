@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+<a href="/indexadmin">Home</a> ||<a href="/insertseason">insert season</a>|| <a href="/insertcategory">insert category</a> || <a href="/insertcolor">insert product color</a> ||<a href="/insertproduct">insert product size & stock</a> ||
+            <center> <h1> PRODUCT </h1></center><br>
+            <table border="1" width="300" cellspacing="0" cellpadding="0" >
+                <tr>
+                        <td style="font-weight:bold">Season</td>
+                        <td style="font-weight:bold">Category</td>
+                        <td style="font-weight:bold">Product</td>
+                        <td style="font-weight:bold">Price</td>
+                        <td style="font-weight:bold">Description</td>
+                    </tr>
+                    <% 
+                    for (var i=0; i<product.length; i++)
+                    { %>
+                    <tr>
+                        <td><%= product[i].season %></td>
+                        <td><%= product[i].productcategory %></td>
+                        <td><%= product[i].product %></td>
+                        <td><%= product[i].price %></td>
+                        <td><%= product[i].description %></td>
+                    </tr>
+                    <% } %>
+                    </table><br><br>
+
+
+
+        <form method="post" action="/setinsert2">
+            <select name="productcategoryid">
+            <option selected>CATEGORY PRODUCT</option>
+            <% productcategory.forEach(productcategory => { %>
+            <option value="<%= productcategory.id %>"><%= productcategory.season %> | <%= productcategory.productcategory %>  </option>
+            <% }) %>    
+            </select><br><br>
+            product : <input type="text" name="product"><br>
+            price : <input type="text" name="price"><br>
+            description :<textarea type="text" name="description"></textarea><br>
+            <input type="Submit" value="Submit">
+        </form>
+    </body>
+</html>

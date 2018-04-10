@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+<a href="/indexadmin">home</a>
+            <center> <h1> SEASON </h1></center><br>
+            <table border="1" width="300" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="font-weight:bold">id</td>
+                        <td style="font-weight:bold">season</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <% 
+                    for (var i=0; i<season.length; i++)
+                    {
+                    %>
+                    <tr>
+                        <td><%= season[i].id %></td>
+                        <td><%= season[i].season %></td>
+                        <td><button><a href="/deleteseason/<%= season[i].id %>">delete</a></button></td>
+                        <!-- <td><button><a href="/editeseason/<%= season.id %>">edit</a></button></td> -->
+                    </tr>        
+                    <% 
+                    }
+                     %>
+                    </table>
+                    <br>
+
+        <form method="post" action="/setinsert">
+            season : <input type="text" name="season"><br><br><br>           
+            <input type="Submit" value="Submit">
+        </form>
+        
+    </body>
+</html>

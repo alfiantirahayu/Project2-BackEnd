@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+<a href="/indexadmin">Home</a> || <a href="/insertseason">insert season</a>|| <a href="/insertcategory">insert category</a> || <a href="/insertproduct">insert product</a> || <a href="/insertsize">insert product size & stock</a> ||
+          <center> <h1> PRODUCT COLOR</h1></center><br>
+          <table border="1" width="300" cellspacing="0" cellpadding="0" >
+                <tr>
+                        <td style="font-weight:bold">Season</td>
+                        <td style="font-weight:bold">Category</td>
+                        <td style="font-weight:bold">Product</td>
+                        <td style="font-weight:bold">Price</td>
+                        <td style="font-weight:bold">Color</td>
+                    </tr>
+                    <% 
+                    for (var i=0; i<product1.length; i++)
+                    {
+                    %>
+                    <tr>
+                        <td><%= product1[i].season %></td>
+                        <td><%= product1[i].productcategory %></td>
+                        <td><%= product1[i].product %></td>
+                        <td><%= product1[i].price %></td>
+                        <td><%= product1[i].productcolor %></td>
+                    </tr>
+                    <% 
+                    }
+                     %>
+        </table>
+        <br><br>
+        <form method="post" action="/setinsert3">
+            <select name="productid">
+            <option selected>PRODUCT</option>
+            <% product.forEach(product => { %>
+            <option value="<%= product.productid %>"><%= product.season %> || <%= product.productcategory %> || <%= product.product %> </option>
+            <% }) %>    
+            </select><br><br>
+                productcolor : <input type="text" name="productcolor"><br>
+                <input type="Submit" value="Submit">
+        </form><br>
+    </body>
+</html>
